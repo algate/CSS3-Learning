@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>伪类选择器-:target</title>
+<style type="text/css">
+html {
+    font-size: 10px;
+}
+/*   :target
+    目标伪类选择器：URI中的标志符通常会包含一个#号
+    "#content" ":target"就是用来匹配id为"content"的元素的
+ */
+nav h2 {
+    margin: 5px 0;
+    padding: 0;
+    position: relative;
+}
+nav h2::before {
+    border: 5px solid #fff;
+    border-color: #fff transparent transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+nav h2 a {
+    background: #8f8f8f;
+    background: gradient(top, #dedede,#8f8f8f);
+    border-radius: 5px;
+    color: #424242;
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 10px;
+    text-shadow: 2px 2px 2px #aeaeae;
+    text-decoration: none;
+}
+nav p {
+    height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    transition: height 0.5s ease-in;
+}
+nav :target h2 a,
+nav :target h2 a:focus,
+nav :target h2 a:hover,
+nav :target h2 a:active {
+    background: #2288dd;
+    background: gradient(top, #6bb2ff, #2288dd);
+    color: #fff;
+}
+/* 显示内容的关键代码 */
+nav :target p {
+    height: 100px;
+    overflow: auto;
+}
+nav :target h2::before {
+    border-color: transparent transparent transparent #fff;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div id="target_a">
+            <h2><a href="#target_a">Brand</a></h2>
+            <p>is   :target use in chrome</p>
+        </div>
+        <div id="target_b">
+            <h2><a href="#target_b">Brand</a></h2>
+            <p>is   :target use in chrome</p>
+        </div>
+        <div id="target_c">
+            <h2><a href="#target_c">Brand</a></h2>
+            <p>is   :target use in chrome</p>
+        </div>
+    </nav>
+<script type="text/javascript"></script>
+</body>
+</html>

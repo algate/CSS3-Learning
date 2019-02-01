@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3-制作记事本纸张效果</title>
+<style type="text/css">
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    background-image: -webkit-repeating-linear-gradient(to top, #f7dc59, #f7dc59 29px, #000 30px);
+    background-image: repeating-linear-gradient(to top, #f7dc59, #f7dc59 29px, #000 30px);
+    background-size: 100% 30px;
+    position: relative;
+    /*增加竖线显示*/
+}
+body::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    border-left: 4px double #999;
+    position: absolute;
+    left: 30px;
+}
+/* CSS3制作纹理背景 */
+div {
+    background: #0ae linear-gradient(rgba(255,255,255,.2) 50%,transparent 50%, transparent);
+    background-size: 50px 50px;
+}
+</style>
+</head>
+<body>
+<!-- <div style="width: 200px;height: 200px;"></div> -->
+</body>
+</html>
